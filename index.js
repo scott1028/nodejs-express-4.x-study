@@ -76,6 +76,12 @@ app.use(function(req, res, next){
   req.session.messages = [];
 });
 
+
+// scott add:
+// add active_record support
+require('./orm')(app);
+
+
 // load controllers
 require('./lib/boot')(app, { verbose: !module.parent });
 

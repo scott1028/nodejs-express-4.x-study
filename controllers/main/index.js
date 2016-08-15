@@ -5,7 +5,13 @@ exports.index = function(req, res){
 };
 
 exports.list = function(req, res, next){
-  // res.render('list', { users: db.users });
   req.session.test_value = 0;
-  res.json(db.users);
+  console.log('Invoke ORM!');
+  req.models.User.find({uid: 1}, function (err, user){
+    if(err){
+      res.status(400).json(null);
+      return;
+    }
+    res.json(user);
+  });
 };
