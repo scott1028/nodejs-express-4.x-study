@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-express-4.x-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "file:express",
+    "express-session": "^1.14.0",
+    "method-override": "^2.3.6",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "ejs": "^2.5.1",
+    "jade": "^1.11.0"
+  }
+}
