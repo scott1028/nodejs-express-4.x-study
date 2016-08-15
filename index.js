@@ -51,6 +51,10 @@ app.use(methodOverride('_method'));
 
 // expose the "messages" local variable when views are rendered
 app.use(function(req, res, next){
+  console.log(req.session.test_value);
+  req.session.test_value = req.session.test_value || 10;
+  req.session.test_value += 10;
+
   var msgs = req.session.messages || [];
 
   // expose "messages" local variable
