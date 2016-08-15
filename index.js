@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 
-var express = require('./express');
+var express = require('express');
 var logger = require('morgan');
 var session = require('express-session');
 var bodyParser = require('body-parser');
