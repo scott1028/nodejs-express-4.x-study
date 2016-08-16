@@ -3,7 +3,7 @@
 var orm = require("orm");
 
 module.exports = function(app){
-    app.use(orm.express("mysql://root:XXXXXX@localhost/elearn_dev", {
+    app.use(orm.express("mysql://root:27562952@localhost/elearn_dev", {
         define: function (db, models, next) {
             models.User = db.define("users", {
                 uid: { type: 'serial', key: true },
