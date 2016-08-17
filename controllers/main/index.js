@@ -11,12 +11,11 @@ exports.list = function(req, res, next){
   req.session.test_value = 0;
   console.log('Invoke ORM!');
   // or you can use .fetchAll()
-  req.Models.User.where('uid', 5).fetch({withRelated: ['userPurchases']}).then(function(user){
+  req.Models.User.where('uid', 5).fetch().then(function(user){
     console.log('user_email', user.get('user_email'));
-    user.related('userPurchases').each(function(row){
-      console.log('purchase_status', row.get('purchase_status'));
-    });
-    res.json(user);
+    user.load(['userPurchases', 'userWatches.productParent']).then(function(){
+      res.json(user);    
+    })
   });
 
   // for node-orm2 asample

@@ -17,7 +17,8 @@
     "forever": "^0.15.2",
     "knex": "^0.11.10",
     "method-override": "^2.3.6",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1"
   },
   "devDependencies": {
     "ejs": "^2.5.1",
