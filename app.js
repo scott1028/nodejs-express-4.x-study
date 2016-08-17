@@ -77,7 +77,8 @@ module.exports = function(module){
 
   // scott add:
   // add active_record support
-  require('./orm')(app);
+  // require('./orm')(app);
+  require('./orm_bookshelf')(app);
 
 
   // load controllers
