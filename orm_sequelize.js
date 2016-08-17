@@ -40,9 +40,24 @@ module.exports = function(app){
         product_code: {
             type: Sequelize.STRING
         },
+        customize_field1: {
+            type: Sequelize.VIRTUAL
+        },
+        customize_field2: {
+            type: Sequelize.VIRTUAL,
+            get: function(){
+                return this.fullName;  // define pesudo property in getterMethods
+            }
+        }
     }, {
         freezeTableName: true, // Model tableName will be the same as the model name
-        timestamps: false
+        timestamps: false,
+        // pseudo property
+        getterMethods: {
+            fullName: function() {
+                return this.product_code + '==' + this.product_code;
+            }
+        }
     });
     Models.ProductParent = sequelize.define('product_parents', {
         pid: {

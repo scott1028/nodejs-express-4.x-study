@@ -19,7 +19,15 @@ exports.list = function(req, res, next){
         include: [ req.Models.ProductParent ]
       }
     ]}).then(function(user){
-      res.json(user);
+      // user is object of model, not as single object of Hash.new, ex: It means user.instanceMethodOfModel is invokable.
+      user.user_purchases.forEach(function(row){
+        console.log('row.product_parent.product_code', row.product_parent.product_code);
+        // you must define a virtual field in Model Class
+        row.customize_field1 = 'test_by_scott in controller';
+      });
+      return { user: user, customize: true };
+    }).then(function(json){
+      res.json(json);
     }).catch(function(err){
       res.json(null);
     });
