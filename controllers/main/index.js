@@ -10,13 +10,28 @@ exports.index = function(req, res){
 exports.list = function(req, res, next){
   req.session.test_value = 0;
   console.log('Invoke ORM!');
+  // ex for sequelize.js
+  req.Models.User.findOne({
+    where: { uid: 5 },
+    include: [
+      {
+        model: req.Models.UserPurchase,
+        include: [ req.Models.ProductParent ]
+      }
+    ]}).then(function(user){
+      res.json(user);
+    }).catch(function(err){
+      res.json(null);
+    });
+
+  // ex for bookshelf.js:
   // or you can use .fetchAll()
-  req.Models.User.where('uid', 5).fetch().then(function(user){
-    console.log('user_email', user.get('user_email'));
-    user.load(['userPurchases', 'userWatches.productParent']).then(function(){
-      res.json(user);    
-    })
-  });
+  // req.Models.User.where('uid', 5).fetch().then(function(user){
+  //   console.log('user_email', user.get('user_email'));
+  //   user.load(['userPurchases', 'userWatches.productParent']).then(function(){
+  //     res.json(user);    
+  //   })
+  // });
 
   // for node-orm2 asample
   // req.models.User.find({uid: 1}, function (err, user){

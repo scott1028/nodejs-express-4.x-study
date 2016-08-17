@@ -78,7 +78,8 @@ module.exports = function(module){
   // scott add:
   // add active_record support
   // require('./orm')(app);
-  require('./orm_bookshelf')(app);
+  // require('./orm_bookshelf')(app);
+  require('./orm_sequelize')(app);
 
 
   // load controllers
