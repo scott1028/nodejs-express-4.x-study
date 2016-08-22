@@ -33,5 +33,13 @@ make forever
 - Middleware Hook Study Sample
 
 ```
-node ./app_explain_middleware_hook_sample.js
+$ node ./app_explain_middleware_hook_sample.js
+	...
+Example app listening on port 3000!
+hello world1
+hello world2
+hello world3
+hello world4
+hello world5
+hello world6
 ```

@@ -3,14 +3,16 @@ var app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res, next) {
+    console.log('hello world1');
     res.write('hello world1');
     next();
 }, function(req, res, next){
+    console.log('hello world2');
     res.write('hello world2');
     next();
 }, function(req, res, next){
-    res.write('hello world3');
     console.log('hello world3');
+    res.write('hello world3');
     res.end();
     next();
 });
