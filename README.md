@@ -34,7 +34,7 @@ make forever
 
 ```
 $ node ./app_explain_middleware_hook_sample.js
-	...
+    ...
 Example app listening on port 3000!
 hello world1
 hello world2
