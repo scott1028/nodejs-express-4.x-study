@@ -3,10 +3,12 @@ var app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res, next) {
+    // 1. ex: you can hook log handle here.
     console.log('hello world1');
     res.write('hello world1');
     next();
 }, function(req, res, next){
+    // 2. ex: you can hook orm here in "success callback" invoke next function.
     console.log('hello world2');
     res.write('hello world2');
     next();
