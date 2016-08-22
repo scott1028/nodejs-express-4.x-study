@@ -8,7 +8,7 @@ app.get('/', function(req, res, next) {
     res.write('hello world1');
     next();
 }, function(req, res, next){
-    // 2. ex: you can hook orm here in "success callback" invoke next function.
+    // 2. ex: you can hook orm here in "success callback" to invoke next function.
     console.log('hello world2');
     res.write('hello world2');
     next();
