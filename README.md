@@ -29,3 +29,9 @@ make forever
 - ORM use Node-ORM2(關聯設定有點問題, 無關連直接使用還滿好用的)
 
 ![Alt text](https://raw.githubusercontent.com/scott1028/nodejs-express-4.x-study/master/How-to-use-express-session.png "How-to-use-express-session.png")
+
+- Middleware Hook Study Sample
+
+```
+node ./app_explain_middleware_hook_sample.js
+```
