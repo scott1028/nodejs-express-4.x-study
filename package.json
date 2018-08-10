@@ -5,7 +5,9 @@
   "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "app2": "node app_explain_middleware_hook_sample.js",
+    "app3": "node app_explain_router_mechanism_sample.js"
   },
   "author": "",
   "license": "ISC",
