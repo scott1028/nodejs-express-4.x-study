@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 // Case-1
 app.all('/api/*', (req, res, next) => {  // match wildcard "/api/*"
@@ -34,6 +34,17 @@ app.all('/api2/*', (req, res, next) => {  // match strict "/api2/*" because "/ap
   console.log(3, `api2`);
   next();
 });
+
+//
+const additionalRoute = express.Router();
+additionalRoute.use('/books', function(req, res, next) {
+  console.log(4, `in additionalRoute .../books`);
+  res.send(`in additionalRoute .../books`);
+  next();
+});
+
+// to match strict "/newFeature/books"
+app.use('/newFeature', additionalRoute);
 
 // conclusion
 //  1. hoist detailed path to top, and put wildcard path to be final.
