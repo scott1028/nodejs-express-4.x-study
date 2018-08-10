@@ -4,6 +4,7 @@ const app = express();
 // Case-1
 app.all('/api/*', (req, res, next) => {  // match wildcard "/api/*"
   console.log(1, `api`);
+  global.tmpV = 7;  // put variables to global may cause memory leak
   next();
 });
 
@@ -39,6 +40,7 @@ app.all('/api2/*', (req, res, next) => {  // match strict "/api2/*" because "/ap
 const additionalRoute = express.Router();
 additionalRoute.use('/books', function(req, res, next) {
   console.log(4, `in additionalRoute .../books`);
+  console.log(global.tmpV);  // put variables to global may cause memory leak
   res.send(`in additionalRoute .../books`);
   next();
 });
