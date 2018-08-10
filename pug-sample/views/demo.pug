@@ -1,0 +1,7 @@
+extends layout
+
+block optional
+  pre At #{title}, now time is #{currentTime}
+  pre #{JSON.stringify({locals})}
+  pre #{JSON.stringify({settings})}
+  pre #{JSON.stringify({globals})}
