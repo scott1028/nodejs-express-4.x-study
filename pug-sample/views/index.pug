@@ -7,3 +7,7 @@ block content
   - console.log(`a =>`.rainbow, a);
   - console.error(`title =>`.rainbow, title);
   p After Computed Inline Script!!
+  pre #{1 + 2 + ` - ${a}`}
+  - var tmpValue = 100;
+  pre #{tmpValue} [note! inline variable not in locals scope.]
+  pre #{JSON.stringify(locals, null, 2)}
